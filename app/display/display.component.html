@@ -1,0 +1,191 @@
+<button routerLink="/homes" class="b3" >LOGOUT</button>
+<html><head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+       
+<div *ngIf="is">
+
+        <!-- <div class="navbar">
+                <a (click)="disp()">MOVIES</a>
+                <a href="#news">UPCOMING</a>
+               <a href="#">POINTS</a>
+               <a href="#">POLL</a>
+               <a href="#" style="float: right;">NEWS</a>
+            </div> -->
+            <form #search="ngForm" (ngSubmit)="click(search)" method="POST">
+            <div id="UserSelector">
+            Search:<input class="search" type="text" name="searchrow"  placeholder="Search by Movie Name " ngModel>
+            <input class="b6" type="submit" name="Search">
+        </div>
+        </form>
+                        <!-- <select id="UserSelector" size="6" style="width: 100%;">   
+                
+                  
+                  
+                        <option *ngFor="let ele of newimage">{{ele.name}}</option>
+                    
+                      </select> 
+                     -->
+                   
+                    
+    
+            <div class="p">                 
+<h1>Pick A Movie</h1>
+</div>
+
+<table style="width:100%;margin-left:150px;">
+<tr>
+<div *ngFor="let num of number" >
+
+
+<td><button type="submit" (click)="display(num+1)"  ><img src={{newimage[num].image}} alt="Submit"  width="350" height="400" ></button> <p>{{newimage[num].name}} </p></td>
+
+<td><button type="submit" (click)="display(num+2)"><img src={{newimage[num+1].image}} alt="Submit"  width="350" height="400" ></button><p>{{newimage[num+1].name}}</p> </td>
+
+<td><button type="submit" (click)="display(num+3)"><img src={{newimage[num+2].image}} alt="Submit"  width="350" height="400" ></button><p>{{newimage[num+2].name}}</p> </td>
+
+<td><button type="submit" (click)="display(num+4)"><img src={{newimage[num+3].image}} alt="Submit"  width="350" height="400" ></button><p>{{newimage[num+3].name}}</p> </td>
+
+<!--<td><button type="submit" (click)="display(num+4)"><img src={{newimage[num+4].url}} alt="Submit"  width="300" height="350" ></button><p>{{newimage[num+4].name}}</p> </td>-->
+
+
+</div>
+</tr>
+
+
+<tr>
+<div class="tab" *ngIf="status">
+    
+
+    <td *ngFor="let no of array"><button type="submit" (click)="display(no+ni)"  ><img src={{newimage[no+ni-1].image}} alt="Submit"  width="350" height="400" ></button> <p>{{newimage[no+ni-1].name}}</p></td>
+
+</div>
+   
+</tr>
+
+
+</table>
+
+
+</div>
+
+<div *ngIf="not">
+        <!-- <div class="navbar">
+                <a (click) = "disp()">MOVIES</a>
+                <a href="#news">UPCOMING</a>
+               <a href="#">POINTS</a>
+               <a href="#">POLL</a>
+               <a href="#" style="float: right;">NEWS</a>
+            </div> -->
+            <div class="video">
+    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(details.video)' width="940" height="450" frameborder="0" 
+       >
+    </iframe><!--840,460-->
+</div>
+    
+                
+        <div class="ribbon">
+          <img src={{details.image}} alt="Nature" width="940" height="440"  > <!--800,460-->
+          </div>
+          <div class="rating">
+          <div *ngIf="three">
+          
+          
+       
+        <h1>RATING</h1>
+        <div class="adjust">    
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+    </div>
+        
+       
+        </div>
+       <div *ngIf="one">
+          
+         
+            
+        <h1>RATING</h1>
+        <div class="adjust">    
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        
+        </div>
+       
+    </div>
+    <div *ngIf="two">
+          
+         
+            
+        <h1>RATING</h1>
+        <div class="adjust">    
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        </div>
+        
+        
+        </div>
+        <div *ngIf="four">
+          
+         
+       
+        <h1>RATING</h1>
+        <div class="adjust">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+    </div>
+        
+        
+        </div>
+
+        <div *ngIf="five">
+                
+         
+                <h1>RATING</h1>
+        
+                <div class="adjust">    
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+    </div>
+        
+        
+    </div>
+    <button (click)="movie(details.cid1)" class="b5" [routerLink]="['/seat']">BOOK NOW</button>
+   
+</div>
+<div>
+        <button  (click)="set()" class="b8" [routerLink]="['/display']">BACK</button>
+</div>
+       <div class="back">
+        
+        
+        <p class="cursive">
+        
+        <B>LANGUAGE:</B>{{details.language}}<br>
+        <B>GENRE:</B>{{details.genre}}<br>
+        <B>DURATION:</B>{{details.duration}}<br>
+        
+        
+        <B>SYNOPSIS:</B><br>
+        {{details.synopsis}}
+        </div>
+    
+</div>
+</body>
+</html>

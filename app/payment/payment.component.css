@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(32, 28, 28);
+  
+    margin:0px;
+    width:100%;
+    height:1500px;
+}
+.b3{
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+      color:beige;
+      text-align: center;
+      /* padding: 14px 16px; */
+      text-decoration: none;
+    position: relative;
+    top:-63px;
+    left:1720px;
+    padding-left:20px;
+      padding-right:20px;
+      padding-top:15px;
+      padding-bottom:15px;
+      border:none;
+  }
+  
+  .b3:hover{
+    background-color: red;
+    color:wheat
+  }
+
+  .red{
+      position: relative;
+      top:200px;
+      left:400px;
+      color: red;
+      font-size: 20pt;
+  }
+  html {
+    background-color: black;
+  } 
+
+  .btn1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    width: 200px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 26px;
+    position: absolute;
+    right:450px;
+    top:600px;
+  }

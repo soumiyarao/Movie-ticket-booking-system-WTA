@@ -1,0 +1,68 @@
+<!-- <div class="navbar">
+    <a routerLink='/display'>MOVIES</a>
+    <a href="#news">UPCOMING</a>
+   <a href="#">POINTS</a>
+   <a href="#">POLL</a>
+   <a href="#" style="float: right;">NEWS</a>
+</div> -->
+<div *ngIf="emailFound">
+<button routerLink="/homes" class="b3" >LOGOUT</button>
+<div class="navbar" >
+    <a style="background-color:red;">Date</a>
+    <div *ngFor="let num of datearray">
+        <a style="padding-left:60px;padding-right:60px;" (click)="datedisplay(num)"  >  {{num}}</a>
+    </div>
+</div>
+<div *ngIf="stat">
+    <img src="https://www.popsci.com/resizer/qYm5DuueH5w9kQO5H49ApM3uw48=/1008x671/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/B5PI7L24UOJIOPV3ZL2XN72YYE.jpg" width="100%" height="800">
+
+</div>
+<div *ngIf="status">
+       
+        <select class="drop" (change)="selectChangeHandler($event)">
+               
+                <option  name="time" value="morn">9:00 am</option>
+                <option  name="time" value="aft">12:00 pm</option>
+                <option  name="time" value="eve">4:00 pm</option>
+                <option  name="time" value="night">8:00pm</option>
+              </select>
+               
+</div>
+<div *ngIf="blurstat">
+   
+    <div class="blur">
+        <table class="matrix">
+       
+           <tr *ngFor="let number of row">
+           
+               <td *ngFor="let num of column" ><button class="seat" id="{{number}}{{num}}" title="SEAT:{{number}}{{num}}" (click)="seatno(number,num)" ></button></td>
+           
+        </tr>
+       
+    </table>
+    <p class="screen">Screen Here</p>
+    </div>
+
+</div>
+
+<!-- <button class="seat" id="{{i}}{{j}}" (click)="seat()"></button> -->
+<div class="bill" *ngIf="billstatus">
+  <p class="line">Date:</p> {{dateselect}} <p class="line">Price:</p>{{len*200}}
+    
+   
+   <p>Seat Selected:</p> 
+    <div *ngFor="let ar of arr">
+        {{ar}}
+    </div>
+   
+   
+    <button (click)="checkout()" class="sub">Payment</button>
+</div>
+</div>
+
+<div *ngIf="emailNotFound">
+        <div class="center">
+       <span> <p class="sign"  >  Please sign in here</p><input type="button" value="Login" routerLink="/login" class="SignBtn"></span>
+       <span> <p class="regis" >  If not registered, CLICK HERE</p><input type="button" routerLink="/regis" value="Register" class="RegisBtn"></span>
+      </div>
+</div>

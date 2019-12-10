@@ -1,0 +1,49 @@
+table{
+    width: 100%;
+ 
+}
+
+.mat-column-right{
+    text-align:center;
+    
+}
+
+button{
+    padding-right: 80px;
+    padding-left:50px;
+    text-align: center;
+}
+
+h1{
+    color:black;
+    text-align: center;
+    text-shadow: 2px 4px #990033;
+    float: left;
+    
+}
+
+.material-icons-two-tone{
+  font-family: 'Material Icons Round';
+  text-shadow: none;
+ 
+
+}
+td{
+    font-family: 'Material Icons Round';
+    font-size: 20pt;
+}
+th{
+    font-size: 20pt;
+
+}
+
+.mat-icon{
+    text-shadow: none;
+    font-size: 30px;
+    float: left;
+    clear: left;
+}
+    
+    
+    
+    

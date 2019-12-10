@@ -1,0 +1,45 @@
+<mat-toolbar>
+        <span><mat-icon>person</mat-icon>&nbsp;&nbsp;&nbsp;ADMIN</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <button mat-stroked-button color="primary" routerLink="/home"><mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;Home</button>&nbsp;&nbsp;&nbsp;
+        <button mat-stroked-button color="primary" routerLink="/add"><mat-icon>playlist_add</mat-icon>&nbsp;&nbsp;&nbsp;Add New Movie</button>&nbsp;&nbsp;&nbsp;
+        <button mat-stroked-button color="primary" routerLink="/polls"><mat-icon>list</mat-icon>&nbsp;&nbsp;&nbsp;View Poll Results</button>&nbsp;&nbsp;&nbsp; 
+        <button mat-stroked-button color="primary" routerLink="/profile"><mat-icon>account_circle</mat-icon>&nbsp;&nbsp;&nbsp;View User Profiles</button>&nbsp;&nbsp;&nbsp; 
+        <button mat-stroked-button  color="primary" routerLink="/archives"><mat-icon>archive</mat-icon>&nbsp;&nbsp;&nbsp;Archives</button>
+        <button mat-stroked-button  color="primary" routerLink="/homes"><mat-icon>person</mat-icon>&nbsp;&nbsp;&nbsp;LOGOUT</button>
+      </mat-toolbar>
+
+<div>
+        <br>
+        <mat-card>
+  
+            <table mat-table [dataSource]="polls">
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>Title</th>
+                  <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="image">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element"><img [src]="element.url"></td>
+                </ng-container>
+          
+                <ng-container matColumnDef="pollcount">
+                    <th mat-header-cell *matHeaderCellDef>POLL COUNT</th>
+                    <td mat-cell *matCellDef="let element">{{element.poll}}</td>
+                </ng-container>
+          
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef class="mat-column-right">Actions</th>
+                  <td mat-cell *matCellDef="let element" class="mat-column-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button mat-button color="primary"  routerLink="/add">Add</button>
+                    <button mat-button color="warn" (click)="deleteMovie(element.name)">Not interested</button>
+                  </td>
+              </ng-container>
+          
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+               
+            </table>
+            </mat-card>
+      </div>

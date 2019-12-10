@@ -1,0 +1,152 @@
+<div *ngIf="emailFound">
+ <button routerLink="/homes" class="b3" >LOGOUT</button>
+<div *ngIf="stat" >
+
+   <button class="back">Points:{{detpoint.point}}</button> 
+   </div> 
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <style>
+    table{
+
+        position: absolute;
+        left:150px;
+    }
+    
+    
+    
+    </style>
+
+
+    <body>
+            <!-- <table><tr><td><p>{{detpoint.name}}</p></td><td>{{email1}}</td><td>{{detpoint.point}}</td></tr></table> -->
+        <header>
+           <button (click)="place()" class="position">Place Order</button>
+       
+        <table>
+            <tr>
+
+                
+               
+                    <td>
+                                <div class="container">
+                                       
+                                       
+                            <input (click)="image('1.jpg','PopCorn','200')" id="1.jpg" title="POPCORN  -200" type="image" src="../../assets/images/pop.jpg" height="400" width="400">
+                        
+                            <!-- <div class="overlay">
+                                        <div class="text">PopCorn  -200</div>
+                                        
+                        </div> -->
+                        </div>
+                        
+                                    
+                            
+                       
+                    
+                    </td>
+
+               
+               
+                        <td>
+                                <div class="container">
+                                        <input (click)="image('2.jpg','Coke','150')" id="2.jpg" title="Coke -150" type="image" src="../../assets/images/coke.jpg" height="400" width="400">
+                                        <!-- <div class="overlay">
+                                                <div class="text">Coke -150</div>
+                                              </div> -->
+                                              </div>
+                        </td>
+      <td></td>
+                
+                        <td>
+                                <div class="container">
+                                        <input (click)="image('3.jpg','Sandwich','200')" id="3.jpg" type="image" title="SandWich -200" src="../../assets/images/sand.jpg" height="400" width="400">
+                                       <!-- <div class="overlay">
+                                                 <div class="text">SandWich -200</div>
+                                              </div> -->
+                                              </div>
+                        </td>
+                        <td>
+                                <div class="container">
+                                        <input (click)="image('4.jpg','Samosa','100')" id="4.jpg" type="image" title="Samosa -100" src="../../assets/images/samosa.jpg" height="400" width="400">
+                                        <!-- <div class="overlay">
+                                                <div class="text">Samosa -100</div>
+                                              </div> -->
+                                              </div>
+                        </td>
+    
+               
+            </tr>
+
+
+            <tr>
+                   
+                        <td><div class="container">
+                                <input (click)="image('5.jpg','Burger','250')" id="5.jpg" type="image" title="Burger -250" src="../../assets/images/burger.jpg" height="400" width="400">
+                                <!-- <div class="overlay">
+                                        <div class="text">Burger -250</div>
+                                      </div>-->
+                                    </div></td> 
+    
+                   
+                            <td><div class="container">
+                                    <input (click)="image('6.jpg','Combo','350')" id="6.jpg" title="Combo   -350" type="image" src="../../assets/images/combo.jpg" height="400" width="400">
+                                    <!-- <div class="overlay">
+                                            <div class="text">Combo   -350</div>
+                                          </div> -->
+                                        \</div></td>
+        
+                   \
+                            <td><div class="container">
+                                    <input (click)="image('7.jpg','Nachos','200')" id="7.jpg" title="Nachos -200" type="image" src="../../assets/images/nach.jpg" height="400" width="400">
+                                    <!-- <div class="overlay">
+                                            <div class="text">Nachos -200</div>
+                                          </div> -->
+                                        </div></td>
+                                          <td>
+                                                <div class="container">
+                                                        <input (click)="image('8.jpg','Moccha','250')" id="8.jpg" title="Moccha -250" type="image" src="../../assets/images/ice.jpg" height="400" width="400">
+                                                        <!-- <div class="overlay">
+                                                                <div class="text">Moccha -250</div>
+                                                              </div> -->
+                                                              </div>
+                                        </td>
+        
+                  
+                </tr>
+
+
+        
+
+
+
+
+                
+
+
+
+
+
+        </table>
+      
+        
+
+</header>
+
+    </body>
+
+
+
+
+
+
+</html>
+</div>
+<div *ngIf="emailNotFound">
+        <div class="center">
+       <span> <p class="sign"  >  Please sign in here</p><input type="button" value="Login" routerLink="/login" class="SignBtn"></span>
+       <span> <p class="regis" >  If not registered, CLICK HERE</p><input type="button" routerLink="/regis" value="Register" class="RegisBtn"></span>
+</div>
+</div>

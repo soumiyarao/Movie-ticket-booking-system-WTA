@@ -1,0 +1,46 @@
+<mat-toolbar>
+    <span><mat-icon>person</mat-icon>&nbsp;&nbsp;&nbsp;ADMIN</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <button mat-stroked-button color="primary" routerLink="/home"><mat-icon>home</mat-icon>&nbsp;&nbsp;&nbsp;Home</button>&nbsp;&nbsp;&nbsp;
+    <button mat-stroked-button color="primary" routerLink="/add"><mat-icon>playlist_add</mat-icon>&nbsp;&nbsp;&nbsp;Add New Movie</button>&nbsp;&nbsp;&nbsp;
+    <button mat-stroked-button color="primary" routerLink="/polls"><mat-icon>list</mat-icon>&nbsp;&nbsp;&nbsp;View Poll Results</button>&nbsp;&nbsp;&nbsp; 
+    <button mat-stroked-button color="primary" routerLink="/profile"><mat-icon>account_circle</mat-icon>&nbsp;&nbsp;&nbsp;View User Profiles</button>&nbsp;&nbsp;&nbsp; 
+    <button mat-stroked-button  color="primary" routerLink="/archives"><mat-icon>archive</mat-icon>&nbsp;&nbsp;&nbsp;Archives</button>
+    <button mat-stroked-button  color="primary" routerLink="/homes"><mat-icon>person</mat-icon>&nbsp;&nbsp;&nbsp;LOGOUT</button>
+  </mat-toolbar>
+
+<div>
+     <br>
+      <mat-card>
+        <section class="mat-typography">
+          <h3>Edit Movie</h3>
+        </section>
+
+        <mat-divider></mat-divider>
+        <br>
+        <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="updateForm" class="edit-form">
+
+          <mat-form-field class="field-full-width">
+            <input matInput placeholder="Movie Title" formControlName="name" #name>
+          </mat-form-field>
+      
+          <mat-form-field class="field-full-width">
+            <input matInput placeholder="Movie Genre" formControlName="genre" #genre>
+          </mat-form-field>
+
+          <mat-form-field class="field-full-width">
+            <input matInput placeholder="Movie Language" formControlName="language" #language>
+          </mat-form-field>
+
+          <mat-divider></mat-divider>
+
+          <br><br>
+          <button type="submit" (click)="updateMovie(name.value,genre.value,language.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
+
+
+      </form> 
+      </mat-card>
+
+</div>      

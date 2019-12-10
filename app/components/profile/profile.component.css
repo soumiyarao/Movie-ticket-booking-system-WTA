@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+}
+
+.mat-column-right{
+    text-align:center;
+}
+
+h1{
+    color:#990033;
+    text-align: center;
+    text-shadow: 2px 4px black;
+}
+
+
+td{
+    font-family: 'Material Icons Round';
+    font-size: 20pt;
+}
+th{
+    font-size: 20pt;
+
+}

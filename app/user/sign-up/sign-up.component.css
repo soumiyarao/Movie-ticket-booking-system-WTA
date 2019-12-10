@@ -1,0 +1,181 @@
+img {
+    max-width: 100%;
+    height: auto;
+  }
+  input[type=submit]:disabled{
+    background-color: #f5f6f6;
+    color: #7d7d7d;
+  }
+  /* You can add global styles to this file, and also import other style files */
+  .b2{
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+      color:beige;
+      text-align: center;
+      /* padding: 14px 16px; */
+      text-decoration: none;
+    position: relative;
+    top:-63px;
+    left:1400px;
+    padding-left:20px;
+      padding-right:20px;
+      padding-top:15px;
+      padding-bottom:15px;
+      border:none;
+  }
+  .b3{
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+      color:beige;
+      text-align: center;
+      /* padding: 14px 16px; */
+      text-decoration: none;
+    position: relative;
+    top:-63px;
+    left:1650px;
+    padding-left:20px;
+      padding-right:20px;
+      padding-top:15px;
+      padding-bottom:15px;
+      border:none;
+  }
+  .b2:hover{
+    background-color: red;
+    color:wheat
+  }
+  .b3:hover{
+    background-color: red;
+    color:wheat
+  }
+  html {
+    background-color: black;
+  } 
+  .back{
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("../../../assets/background.jpg");
+    /* background-repeat: repeat-x; */
+    width:100%;
+    height:750px;
+   margin-top:-30px;
+   margin-left:0px;
+   margin-right:0px;
+    background-repeat: no-repeat;
+    
+  }
+
+
+
+
+  input[type=button], input[type=submit], input[type=reset]  {
+    cursor: pointer;
+    background-color:orangered;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+    background-color: lightcoral;
+  }
+  
+  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  
+  input[type=submit]:disabled{
+    background-color: #f5f6f6;
+    color: #7d7d7d;
+  }
+  
+  input[type=text],input[type=password],input[type=tel]{
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  select{
+    background-color: #f6f6f6;
+    border: none;
+    color:gray;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    text-align-last: center;
+  
+  }
+  select:focus{
+    color: #0d0d0d;
+  }
+  
+  option {
+    text-align: left;
+    color: black;
+    /* reset to left*/
+  }
+  
+  input[type=text]:focus,input[type=password]:focus,input[type=phone]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=text]:placeholder {
+    color: #cccccc;
+  }
+  
+  input[type=text].invalid-textbox,input[type=password].invalid-textbox,input[type=tel].invalid-textbox{
+  border-bottom: 2px solid #ed5558;
+  }
+  
+  label.validation-message{
+    color:#ed5558;
+  }
+  
+  
+  

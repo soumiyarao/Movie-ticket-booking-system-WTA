@@ -1,0 +1,27 @@
+<html>
+<button routerLink="/homes" class="b3" >LOGOUT</button>
+<div *ngIf="!status">
+
+<form #search="ngForm" (ngSubmit)="click(search)" method="POST">
+        <div id="UserSelector">
+        Search:<input class="search" type="text" name="searchrow"  placeholder="Search by Movie Name " ngModel>
+        <input class="b6" type="submit" name="Search">
+    </div>
+    </form>
+
+    <slideshow (click)="imgg()" #slideshow [imageUrls]="popularImages" [height]="'800px'"  [autoPlay]="true" [autoPlayWaitForLazyLoad]="true"></slideshow>
+</div>
+
+<div *ngIf="status">
+   <table class="tab" >
+       <tr>
+           <td class="td"><img src={{pollimg.url}} alt="Submit"  width="500" height="600" ></td>
+           
+           <td><p style="color: wheat;font-size: 30pt;">Poll count</p><p style="color: wheat;font-size: 30pt;position: relative;left:70px">{{pollimg.poll}}</p></td>
+         
+           <td><button (click)="poll()" class="b1" >POLL</button></td>
+       </tr>
+
+   </table>
+</div>
+</html>

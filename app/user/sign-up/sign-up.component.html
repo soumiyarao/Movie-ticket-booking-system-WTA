@@ -1,0 +1,59 @@
+<button routerLink="/login" class="b3" >LOGIN</button>
+<div class="back">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+
+            <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+            required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+        
+            <div *ngIf="signUpForm.submitted && !fullName.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+        
+            <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+            required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+            <div *ngIf="signUpForm.submitted && email.errors">
+              <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+              <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+            </div>
+        
+            <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+            minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+            <div *ngIf="signUpForm.submitted && password.errors">
+              <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+              <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+            </div>
+            
+        
+            <input type="tel" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" name="phone" placeholder="Phone"
+               required pattern="[0-9]{10}" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phone.valid }">
+            <div *ngIf="signUpForm.submitted && phone.errors">
+                <label *ngIf="phone.errors.required" class="validation-message">This field is required.</label>
+                <label *ngIf="phone.errors" class="validation-message">Invalid Phone Number</label>
+                
+            </div>
+        
+            <select  id="favGenre" name="favGenre" #favGenre="ngModel" [(ngModel)]="userService.selectedUser.favGenre">
+              <option hidden value=""  disabled selected>Favourite Genre</option>
+              <option *ngFor="let gen of genres" [value]="gen.name">{{gen.name}}</option>
+              
+            </select>
+           
+        
+            <input type="submit" value="Sign Up">
+          </form>
+        
+          <div class="success" *ngIf="showSuccessMessage">
+            Saved Successfully
+            <meta http-equiv="refresh" content="1">
+          </div>
+        
+          <div class="alert" *ngIf="serverErrorMessages">
+            {{serverErrorMessages}}
+            <meta http-equiv="refresh" content="1">
+          </div>
+        
+  </div>
+</div>
+</div>

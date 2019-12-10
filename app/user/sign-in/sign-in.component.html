@@ -1,0 +1,41 @@
+
+<html>
+<button routerLink="/regis" class="b2" >REGISTRATION</button>
+<div class="back">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+
+  <input type="text" #email="ngModel" [(ngModel)]="userService.userforlogin.email" name="email" placeholder="Email"
+  required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+  <div *ngIf="signInForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+
+  <input type="password" #password="ngModel" [(ngModel)]="userService.userforlogin.password" name="password" placeholder="Password"
+   required [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+  <div *ngIf="signInForm.submitted && password.errors">
+    <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+    <label  class="validation-message"></label>
+  </div>
+
+  <input type="submit" value="Sign In">
+</form>
+
+<div class="success" *ngIf="showSuccessMessage1">
+  {{showSuccessMessage1}}
+</div>
+
+<div class="alert" *ngIf="serverErrorMessages1">
+  {{serverErrorMessages1}}
+  <meta http-equiv="refresh" content="1">
+</div>
+
+<div class="alert" *ngIf="invalidpassword">
+    {{invalidpassword}}
+</div>
+</div>
+</div>
+</div>
+</html>
